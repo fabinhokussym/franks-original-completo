@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Frank's Original — Apresentação Completa</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #C8102E;
+    --red-dark: #9B0B22;
+    --yellow: #FFD700;
+    --yellow-light: #FFE747;
+    --cream: #FFF8E7;
+    --black: #0D0D0D;
+    --gray: #1A1A1A;
+    --gray-mid: #2A2A2A;
+    --green: #00CC88;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--black);
+    color: var(--cream);
+    font-family: 'Barlow', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ===== LOGO SECTION ===== */
+  .logo-section {
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 60px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .logo-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, #1a0008 0%, #0D0D0D 70%);
+  }
+
+  .stars-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,215,0,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 30% 40%, rgba(255,215,0,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 20%, rgba(255,215,0,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 85% 60%, rgba(255,215,0,0.25) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 80%, rgba(255,215,0,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 20% 70%, rgba(255,215,0,0.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 85%, rgba(255,215,0,0.35) 0%, transparent 100%);
+  }
+
+  .logo-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  .shield {
+    width: 320px;
+    height: auto;
+    filter: drop-shadow(0 0 40px rgba(200,16,46,0.6)) drop-shadow(0 0 80px rgba(200,16,46,0.3));
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { filter: drop-shadow(0 0 40px rgba(200,16,46,0.6)) drop-shadow(0 0 80px rgba(200,16,46,0.3)); }
+    50% { filter: drop-shadow(0 0 60px rgba(200,16,46,0.9)) drop-shadow(0 0 120px rgba(200,16,46,0.5)); }
+  }
+
+  .tagline {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 6px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-top: 24px;
+    opacity: 0.85;
+  }
+
+  .flag-stripe {
+    width: 260px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red) 33%, white 33%, white 66%, var(--red) 66%);
+    margin-top: 18px;
+    opacity: 0.6;
+  }
+
+  /* ===== SECTIONS ===== */
+  section {
+    padding: 80px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 5px;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(42px, 8vw, 72px);
+    line-height: 0.95;
+    color: var(--cream);
+    margin-bottom: 32px;
+  }
+
+  h2 span { color: var(--yellow); }
+
+  p {
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(255,248,231,0.8);
+    max-width: 640px;
+    margin-bottom: 16px;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(200,16,46,0.5), transparent);
+    margin: 0 auto;
+  }
+
+  /* ===== CONCEPT GRID ===== */
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .concept-card {
+    background: var(--gray);
+    border: 1px solid rgba(200,16,46,0.2);
+    border-radius: 4px;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .concept-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--red), var(--yellow));
+  }
+
+  .concept-card .icon { font-size: 32px; margin-bottom: 14px; }
+
+  .concept-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--yellow);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .concept-card p { font-size: 15px; margin: 0; }
+
+  /* ===== PRODUCT ===== */
+  .product-section { background: #111; }
+
+  .product-section-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 660px) {
+    .product-grid { grid-template-columns: 1fr; }
+    .steps { flex-direction: column; }
+    .cost-table { font-size: 13px; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .mvp-layout { flex-direction: column; }
+    .chart-bars { gap: 8px; }
+  }
+
+  .product-card {
+    background: var(--black);
+    border: 1px solid rgba(255,215,0,0.15);
+    border-radius: 4px;
+    padding: 32px 28px;
+  }
+
+  .product-card .badge {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .product-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30px;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .product-card .sub {
+    font-size: 13px;
+    color: var(--yellow);
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+
+  .product-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: rgba(255,248,231,0.65);
+    margin-bottom: 0;
+  }
+
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+
+  .tag {
+    background: rgba(200,16,46,0.15);
+    border: 1px solid rgba(200,16,46,0.3);
+    color: rgba(255,248,231,0.7);
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* ===== EQUIPMENT ===== */
+  .equip-card {
+    background: var(--gray);
+    border-left: 4px solid var(--yellow);
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .equip-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  .equip-card .where {
+    font-size: 12px;
+    color: var(--yellow);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .equip-card p { font-size: 14px; margin: 0; }
+
+  /* ===== ROADMAP ===== */
+  .roadmap-bg { background: linear-gradient(180deg, #0D0D0D 0%, #100005 100%); }
+
+  .steps {
+    display: flex;
+    gap: 0;
+    margin-top: 48px;
+    position: relative;
+  }
+
+  .steps::before {
+    content: '';
+    position: absolute;
+    top: 28px; left: 28px; right: 28px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--red), var(--yellow));
+  }
+
+  .step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 12px;
+    position: relative;
+  }
+
+  .step-num {
+    width: 56px; height: 56px;
+    background: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    color: white;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+    border: 3px solid var(--black);
+  }
+
+  .step h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--yellow);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .step p {
+    font-size: 13px;
+    line-height: 1.55;
+    color: rgba(255,248,231,0.6);
+    margin: 0;
+    max-width: 160px;
+  }
+
+  /* ===== USA STRIPE ===== */
+  .usa-stripe {
+    height: 8px;
+    background: repeating-linear-gradient(90deg, var(--red) 0px, var(--red) 40px, white 40px, white 80px, #002868 80px, #002868 120px);
+    opacity: 0.6;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    background: var(--red-dark);
+    text-align: center;
+    padding: 60px 40px;
+  }
+
+  .footer-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--yellow);
+    letter-spacing: 3px;
+  }
+
+  .footer p {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: rgba(255,248,231,0.5);
+    text-transform: uppercase;
+    margin: 10px auto 0;
+  }
+
+  /* ===========================
+     NOVAS SEÇÕES — FINANCEIRO
+  =========================== */
+
+  /* ===== OPORTUNIDADE ===== */
+  .oportunidade-section { background: #0a0a0a; }
+
+  .oportunidade-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .oport-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 700px) {
+    .oport-grid { grid-template-columns: 1fr; }
+    .oport-grid { gap: 14px; }
+  }
+
+  .oport-card {
+    background: var(--gray);
+    border-radius: 4px;
+    padding: 28px 22px;
+    position: relative;
+    overflow: hidden;
+    border-left: 4px solid var(--red);
+  }
+
+  .oport-card .oport-icon { font-size: 28px; margin-bottom: 12px; }
+
+  .oport-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--yellow);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .oport-card p {
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: rgba(255,248,231,0.65);
+    margin: 0;
+  }
+
+  .stat-row {
+    display: flex;
+    gap: 24px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+  }
+
+  .big-stat {
+    background: var(--gray-mid);
+    border-radius: 4px;
+    padding: 32px 40px;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    border-top: 4px solid var(--yellow);
+  }
+
+  .big-stat .num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(48px, 8vw, 72px);
+    color: var(--yellow);
+    line-height: 1;
+    display: block;
+  }
+
+  .big-stat .num.red { color: var(--red); }
+
+  .big-stat .stat-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    color: var(--cream);
+    letter-spacing: 2px;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  .big-stat .stat-sub {
+    font-size: 12px;
+    color: rgba(255,248,231,0.45);
+    margin-top: 6px;
+    line-height: 1.5;
+    margin-bottom: 0;
+    max-width: 100%;
+  }
+
+  /* ===== CUSTO POR DOG ===== */
+  .custo-section { background: #111; }
+
+  .custo-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 36px;
+    font-size: 15px;
+  }
+
+  .cost-table thead tr {
+    background: var(--red);
+  }
+
+  .cost-table thead th {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: white;
+    text-transform: uppercase;
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .cost-table thead th:not(:first-child) { text-align: center; }
+
+  .cost-table tbody tr:nth-child(odd) { background: var(--gray); }
+  .cost-table tbody tr:nth-child(even) { background: var(--gray-mid); }
+
+  .cost-table tbody td {
+    padding: 13px 18px;
+    color: rgba(255,248,231,0.8);
+    font-size: 14px;
+  }
+
+  .cost-table tbody td:not(:first-child) {
+    text-align: center;
+    color: rgba(255,248,231,0.6);
+  }
+
+  .cost-table tbody td.highlight {
+    color: var(--yellow);
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .cost-table tfoot tr { background: rgba(200,16,46,0.12); border-top: 2px solid var(--red); }
+
+  .cost-table tfoot td {
+    padding: 16px 18px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cream);
+    letter-spacing: 0.5px;
+  }
+
+  .cost-table tfoot td.total-val {
+    color: var(--yellow);
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 32px;
+  }
+
+  .stat-card {
+    background: var(--gray);
+    border-radius: 4px;
+    padding: 28px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+  }
+
+  .stat-card.red-accent::before { background: var(--red); }
+  .stat-card.yellow-accent::before { background: var(--yellow); }
+  .stat-card.green-accent::before { background: var(--green); }
+
+  .stat-card .stat-mini-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,248,231,0.45);
+    margin-bottom: 10px;
+  }
+
+  .stat-card .stat-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(38px, 6vw, 56px);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-card.red-accent .stat-big { color: var(--red); }
+  .stat-card.yellow-accent .stat-big { color: var(--yellow); }
+  .stat-card.green-accent .stat-big { color: var(--green); }
+
+  .stat-card .stat-desc {
+    font-size: 12px;
+    color: rgba(255,248,231,0.5);
+    margin: 0;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  /* ===== INVESTIMENTO MVP ===== */
+  .investimento-section { background: #0a0a0a; }
+
+  .investimento-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .mvp-layout {
+    display: flex;
+    gap: 32px;
+    margin-top: 36px;
+    align-items: flex-start;
+  }
+
+  .mvp-list { flex: 1; }
+
+  .mvp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .mvp-item:last-child { border-bottom: none; }
+
+  .mvp-item .mvp-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+    width: 36px;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .mvp-item-text { flex: 1; }
+
+  .mvp-item-text .mvp-cat {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-weight: 600;
+  }
+
+  .mvp-item-text .mvp-desc {
+    font-size: 13.5px;
+    color: rgba(255,248,231,0.6);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .mvp-item .mvp-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    color: var(--cream);
+    flex-shrink: 0;
+    text-align: right;
+    min-width: 90px;
+  }
+
+  .mvp-sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .mvp-total-card {
+    background: var(--gray);
+    border-radius: 4px;
+    padding: 28px 24px;
+    text-align: center;
+    border-top: 4px solid var(--red);
+  }
+
+  .mvp-total-card .tc-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: rgba(255,248,231,0.4);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .mvp-total-card .tc-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    color: var(--yellow);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .mvp-total-card .tc-sub {
+    font-size: 11px;
+    color: rgba(255,248,231,0.4);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .mvp-kpi-card {
+    background: var(--gray-mid);
+    border-radius: 4px;
+    padding: 20px 22px;
+    text-align: center;
+  }
+
+  .mvp-kpi-card.green-top { border-top: 4px solid var(--green); }
+  .mvp-kpi-card.yellow-top { border-top: 4px solid var(--yellow); }
+
+  .mvp-kpi-card .kpi-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: rgba(255,248,231,0.4);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .mvp-kpi-card .kpi-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+
+  .mvp-kpi-card.green-top .kpi-val { color: var(--green); }
+  .mvp-kpi-card.yellow-top .kpi-val { color: var(--yellow); }
+
+  .mvp-kpi-card .kpi-sub {
+    font-size: 11px;
+    color: rgba(255,248,231,0.4);
+    margin: 0;
+    line-height: 1.4;
+  }
+
+  .mvp-divider {
+    height: 2px;
+    background: linear-gradient(90deg, var(--red), var(--yellow));
+    margin: 4px 0;
+    border-radius: 2px;
+  }
+
+  /* ===== PROJEÇÃO FINANCEIRA ===== */
+  .projecao-section { background: #111; }
+
+  .projecao-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .chart-wrap {
+    margin-top: 40px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .chart-area { flex: 1; min-width: 300px; }
+
+  .chart-legend {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgba(255,248,231,0.7);
+    text-transform: uppercase;
+  }
+
+  .legend-dot {
+    width: 12px; height: 12px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+    height: 220px;
+    padding-bottom: 36px;
+    position: relative;
+    border-bottom: 2px solid rgba(255,255,255,0.08);
+  }
+
+  /* horizontal grid lines */
+  .chart-bars::before {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    top: 0; bottom: 36px;
+    background: repeating-linear-gradient(
+      180deg,
+      transparent 0%, transparent calc(25% - 1px),
+      rgba(255,255,255,0.05) calc(25% - 1px), rgba(255,255,255,0.05) 25%
+    );
+    pointer-events: none;
+  }
+
+  .bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    flex: 1;
+  }
+
+  .bar-pair {
+    display: flex;
+    gap: 4px;
+    align-items: flex-end;
+    height: 184px;
+  }
+
+  .bar {
+    width: 22px;
+    border-radius: 3px 3px 0 0;
+    position: relative;
+    transition: opacity 0.2s;
+  }
+
+  .bar:hover { opacity: 0.85; }
+
+  .bar.receita { background: var(--red); }
+  .bar.lucro { background: var(--green); }
+
+  .bar-val {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Oswald', sans-serif;
+    font-size: 9px;
+    color: rgba(255,248,231,0.7);
+    white-space: nowrap;
+    font-weight: 600;
+  }
+
+  .bar-label {
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    color: rgba(255,248,231,0.4);
+    letter-spacing: 1px;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+
+  /* Assumptions sidebar */
+  .assumptions {
+    width: 260px;
+    flex-shrink: 0;
+    background: var(--gray);
+    border-radius: 4px;
+    padding: 28px 24px;
+    border-top: 4px solid var(--yellow);
+  }
+
+  .assumptions h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: var(--yellow);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+
+  .assumption-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  .assumption-row:last-child { border-bottom: none; }
+
+  .assumption-row .a-key {
+    font-size: 12.5px;
+    color: rgba(255,248,231,0.6);
+    line-height: 1.4;
+    max-width: 130px;
+  }
+
+  .assumption-row .a-val {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    color: var(--yellow);
+    font-weight: 600;
+    text-align: right;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+
+  .projecao-note {
+    font-size: 12px;
+    color: rgba(255,248,231,0.3);
+    margin-top: 24px;
+    font-style: italic;
+    max-width: 100%;
+    line-height: 1.6;
+  }
+
+  /* ===== NAV dots ===== */
+  .nav-dots {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+  }
+
+  .nav-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: none;
+    padding: 0;
+  }
+
+  .nav-dot:hover, .nav-dot.active {
+    background: var(--yellow);
+    transform: scale(1.4);
+  }
+
+</style>
+</head>
+<body>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots" aria-label="Navegação">
+  <button class="nav-dot active" onclick="scrollTo(0,0)" title="Início"></button>
+  <button class="nav-dot" onclick="document.getElementById('conceito').scrollIntoView({behavior:'smooth'})" title="Conceito"></button>
+  <button class="nav-dot" onclick="document.getElementById('oportunidade').scrollIntoView({behavior:'smooth'})" title="Oportunidade"></button>
+  <button class="nav-dot" onclick="document.getElementById('produto').scrollIntoView({behavior:'smooth'})" title="Produto"></button>
+  <button class="nav-dot" onclick="document.getElementById('equipamento').scrollIntoView({behavior:'smooth'})" title="Equipamento"></button>
+  <button class="nav-dot" onclick="document.getElementById('custo').scrollIntoView({behavior:'smooth'})" title="Custo"></button>
+  <button class="nav-dot" onclick="document.getElementById('investimento').scrollIntoView({behavior:'smooth'})" title="Investimento"></button>
+  <button class="nav-dot" onclick="document.getElementById('projecao').scrollIntoView({behavior:'smooth'})" title="Projeção"></button>
+  <button class="nav-dot" onclick="document.getElementById('roadmap').scrollIntoView({behavior:'smooth'})" title="Roadmap"></button>
+</nav>
+
+<!-- ===== LOGO / HERO ===== -->
+<div class="logo-section">
+  <div class="stars-bg"></div>
+  <div class="logo-wrap">
+    <svg class="shield" viewBox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+      <path d="M160 10 L300 60 L300 200 Q300 320 160 370 Q20 320 20 200 L20 60 Z" fill="#C8102E"/>
+      <path d="M160 22 L288 68 L288 200 Q288 308 160 355 Q32 308 32 200 L32 68 Z" fill="none" stroke="#FFD700" stroke-width="2.5" opacity="0.7"/>
+      <g fill="#FFD700" opacity="0.9">
+        <text x="160" y="70" text-anchor="middle" font-size="11" font-family="Arial" letter-spacing="18">★ ★ ★ ★ ★</text>
+      </g>
+      <text x="160" y="155" text-anchor="middle" font-family="'Bebas Neue', Impact, sans-serif" font-size="74" font-weight="900" fill="#FFD700" letter-spacing="3">FRANK'S</text>
+      <rect x="50" y="163" width="220" height="5" fill="#FFD700" rx="2"/>
+      <text x="160" y="225" text-anchor="middle" font-family="'Bebas Neue', Impact, sans-serif" font-size="42" fill="white" letter-spacing="8">ORIGINAL</text>
+      <rect x="65" y="238" width="190" height="30" fill="rgba(0,0,0,0.3)" rx="3"/>
+      <text x="160" y="259" text-anchor="middle" font-family="'Oswald', sans-serif" font-size="14" fill="#FFD700" font-weight="400" letter-spacing="5">HOT DOG CO.</text>
+      <text x="160" y="310" text-anchor="middle" font-family="Arial" font-size="14" fill="#FFD700" letter-spacing="12" opacity="0.7">★ ★ ★</text>
+      <text x="160" y="338" text-anchor="middle" font-family="'Barlow', sans-serif" font-size="11" fill="rgba(255,248,231,0.5)" letter-spacing="4">EST. 2025</text>
+    </svg>
+    <div class="tagline">The American Hot Dog Experience</div>
+    <div class="flag-stripe"></div>
+  </div>
+</div>
+
+<div class="usa-stripe"></div>
+
+<!-- ===== O CONCEITO ===== -->
+<section id="conceito">
+  <div class="section-label">O Conceito</div>
+  <h2>O HOT DOG<br><span>DO JEITO CERTO.</span></h2>
+  <p>O Frank's Original traz para o Brasil o que os americanos já sabem há mais de 100 anos: um bom hot dog não precisa de malabarismo. Precisa de uma salsicha de verdade, num pão de brioche, assada no ponto certo.</p>
+  <p>Simples. Rápido. Irresistível. E completamente diferente de tudo que existe por aqui.</p>
+  <div class="concept-grid">
+    <div class="concept-card">
+      <div class="icon">🇺🇸</div>
+      <h3>Posicionamento</h3>
+      <p>Visual e conceito de franquia americana. O consumidor brasileiro valoriza o que vem de fora — usamos isso a nosso favor desde o nome até a embalagem.</p>
+    </div>
+    <div class="concept-card">
+      <div class="icon">⚡</div>
+      <h3>Operação Simples</h3>
+      <p>Produto: salsicha no pão. O ponto de venda assa e entrega. Sem treinamento complexo, sem cozinha elaborada. Escalável por design.</p>
+    </div>
+    <div class="concept-card">
+      <div class="icon">📍</div>
+      <h3>Pontos Estratégicos</h3>
+      <p>Postos de gasolina são máquinas de tráfego. Pessoas param, têm fome, querem algo rápido. Nós estaremos lá.</p>
+    </div>
+    <div class="concept-card">
+      <div class="icon">🔁</div>
+      <h3>Modelo Escalável</h3>
+      <p>A empresa fornece o insumo, define o padrão e treina o ponto. Cada novo posto é receita recorrente sem proporcionar custo operacional direto.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== A OPORTUNIDADE ===== -->
+<div class="oportunidade-section" id="oportunidade">
+  <div class="oportunidade-inner">
+    <div class="section-label">A Oportunidade</div>
+    <h2>O MERCADO BRASILEIRO<br><span>NÃO TEM ISSO.</span></h2>
+    <p>O hot dog padrão não evoluiu. Os postos têm tráfego constante mas nenhum produto à altura. Os EUA já resolveram — basta trazer o modelo.</p>
+
+    <div class="oport-grid">
+      <div class="oport-card">
+        <div class="oport-icon">😐</div>
+        <h3>Hot Dog Comum</h3>
+        <p>Salsicha processada, amido, conservantes. O produto padrão não evoluiu em décadas.</p>
+      </div>
+      <div class="oport-card">
+        <div class="oport-icon">🇺🇸</div>
+        <h3>EUA Já Resolveram</h3>
+        <p>Salsicha 100% bovina, pão brioche, roller grill. Modelo replicável, testado e lucrativo há mais de 100 anos.</p>
+      </div>
+      <div class="oport-card">
+        <div class="oport-icon">📍</div>
+        <h3>Ponto Sem Produto</h3>
+        <p>Postos de gasolina têm tráfego constante mas nenhum hot dog premium para oferecer. Espaço aberto.</p>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="big-stat">
+        <span class="num">50.000+</span>
+        <div class="stat-label">Postos de Gasolina no Brasil</div>
+        <p class="stat-sub">Cada um é um ponto de venda em potencial</p>
+      </div>
+      <div class="big-stat">
+        <span class="num red">2–3x</span>
+        <div class="stat-label">Acima do Dog Tradicional</div>
+        <p class="stat-sub">Ticket superior sem concorrência direta no segmento</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== O PRODUTO ===== -->
+<div class="product-section" id="produto">
+  <div class="product-section-inner">
+    <div class="section-label">O Produto</div>
+    <h2>INSUMOS <span>ENCONTRADOS</span><br>AQUI NO BRASIL</h2>
+    <p>Já existem opções de qualidade real disponíveis para teste imediato. Sem precisar importar nada.</p>
+    <div class="product-grid">
+      <div class="product-card">
+        <div class="badge">⭐ Recomendação Principal</div>
+        <h3>Salsicha Allbeef</h3>
+        <div class="sub">A Table Charcutaria — São Paulo</div>
+        <p>Criada inspirada nos hot dogs americanos. 100% carne bovina, defumada com lenha nobre. Sem amido, sem soja, sem conservante artificial. Ingredientes: acém bovino, gordura bovina, sal e especiarias.</p>
+        <div class="tag-row">
+          <span class="tag">100% Bovina</span>
+          <span class="tag">Defumada</span>
+          <span class="tag">Sem Amido</span>
+          <span class="tag">+100 restaurantes</span>
+        </div>
+        <p style="margin-top:14px; font-size:13px; color:rgba(255,215,0,0.85); font-weight:600;">📲 WhatsApp: (11) 96906-9277</p>
+      </div>
+      <div class="product-card">
+        <div class="badge">Alternativa Clássica</div>
+        <h3>Salsicha Frankfurter</h3>
+        <div class="sub">A Table Charcutaria — São Paulo</div>
+        <p>A versão original que deu nome ao hot dog americano. 100% suína, feita de pernil. Sabor clássico e tradicional. Perfeita para um cardápio com duas opções: Beef e Classic.</p>
+        <div class="tag-row">
+          <span class="tag">100% Suína</span>
+          <span class="tag">Receita Alemã</span>
+          <span class="tag">Perfil Classic</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="badge">Pão</div>
+        <h3>Pão Brioche</h3>
+        <div class="sub">Padaria local / fornecedor artesanal</div>
+        <p>O brioche é o pão do hot dog americano moderno — macio, levemente adocicado, aguenta a salsicha sem desmanchar. Buscar fornecedor de padaria local para o MVP. Custo baixo, diferencial alto.</p>
+        <div class="tag-row">
+          <span class="tag">Diferencial visual</span>
+          <span class="tag">Sabor premium</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="badge">Molhos</div>
+        <h3>Molhos Americanos</h3>
+        <div class="sub">Linha mínima para o padrão Frank's</div>
+        <p>Mostarda amarela americana, ketchup, relish de pepino (pickle) e cheddar líquido. Quatro opções, combinações simples, identidade clara. O cliente monta, não precisa de customização complexa.</p>
+        <div class="tag-row">
+          <span class="tag">Mostarda</span>
+          <span class="tag">Ketchup</span>
+          <span class="tag">Relish</span>
+          <span class="tag">Cheddar</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== EQUIPAMENTOS ===== -->
+<section id="equipamento">
+  <div class="section-label">Equipamento</div>
+  <h2>O <span>FORNINHO</span><br>AMERICANO</h2>
+  <p>O equipamento é o coração visual do produto — a salsicha girando no roller é o marketing passivo mais poderoso que existe. Disponível aqui no Brasil:</p>
+  <div style="margin-top: 32px;">
+    <div class="equip-card">
+      <h3>🔥 Roller Grill Elétrico — Hot Dog Rotativo</h3>
+      <div class="where">Pucci Cozinhas / Mercado Livre / Equipamentos Gastronômicos</div>
+      <p>O equipamento clássico dos EUA. Rolos giratórios que assam a salsicha por igual, deixando a casca tostada e o interior suculento. Transforma salsicha congelada em 30 minutos, não congelada em 20. Visual atrativo — o cliente vê o produto "ao vivo" antes de comprar. <strong style="color: var(--yellow)">Contato: (11) 4502-4602 — Pucci Cozinhas. Solicitar cotação.</strong></p>
+    </div>
+    <div class="equip-card">
+      <h3>💨 Vaporizador Profissional Hot Dog — Inox + Vidro</h3>
+      <div class="where">Lojas Blumenau / Importados / Mercado Livre — ~R$ 700–900</div>
+      <p>Alternativa ao roller — aquece a salsicha a vapor e mantém o pão quente ao mesmo tempo. Inox com janela de vidro temperado, visual clean e profissional. Boa opção para postos com espaço menor. Temperatura ajustável 30°C–110°C. Portátil (10,7kg).</p>
+    </div>
+    <div class="equip-card">
+      <h3>🛒 Carrinho Hot Dog WPPL — Warm Equipamentos</h3>
+      <div class="where">loja.warm.com.br — R$ 5.300 (10x R$ 530 sem juros)</div>
+      <p>Para a fase 1 — a barraquinha do primo. Aço com tratamento antiferrugem, cubas aquecidas para salsicha e pão, espaço para molhos, rodas com freio. Design moderno, muito superior ao carrinho tradicional. <strong style="color: var(--yellow)">Já transforma a barraquinha em ponto Frank's.</strong></p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== CUSTO POR DOG ===== -->
+<div class="custo-section" id="custo">
+  <div class="custo-inner">
+    <div class="section-label">Estudo de Custo</div>
+    <h2>CUSTO POR<br><span>CACHORRO-QUENTE.</span></h2>
+    <p>Análise detalhada de insumos por unidade para definir margem e preço de venda ideal.</p>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Insumo</th>
+          <th>Qtd / Dog</th>
+          <th>Custo Unit.</th>
+          <th>Custo / Dog</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Salsicha Allbeef (A Table Charcutaria)</td>
+          <td style="text-align:center">1 un ≈ 70g</td>
+          <td style="text-align:center">R$ 2,50–3,50</td>
+          <td class="highlight">R$ 3,00</td>
+        </tr>
+        <tr>
+          <td>Pão Brioche</td>
+          <td style="text-align:center">1 un</td>
+          <td style="text-align:center">R$ 1,20–1,80</td>
+          <td class="highlight">R$ 1,50</td>
+        </tr>
+        <tr>
+          <td>Mostarda americana</td>
+          <td style="text-align:center">15g</td>
+          <td style="text-align:center">R$ 0,20</td>
+          <td class="highlight">R$ 0,20</td>
+        </tr>
+        <tr>
+          <td>Ketchup</td>
+          <td style="text-align:center">15g</td>
+          <td style="text-align:center">R$ 0,15</td>
+          <td class="highlight">R$ 0,15</td>
+        </tr>
+        <tr>
+          <td>Embalagem / papel manteiga</td>
+          <td style="text-align:center">1 un</td>
+          <td style="text-align:center">R$ 0,20</td>
+          <td class="highlight">R$ 0,20</td>
+        </tr>
+        <tr>
+          <td>Energia — Roller Grill (rateado)</td>
+          <td style="text-align:center">por dog</td>
+          <td style="text-align:center">—</td>
+          <td class="highlight">R$ 0,10</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" style="font-size:16px; color: var(--cream);">Total estimado por cachorro-quente</td>
+          <td class="total-val">~R$ 5,15</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <div class="stat-grid">
+      <div class="stat-card red-accent">
+        <div class="stat-mini-label">Custo total / dog</div>
+        <div class="stat-big">~R$ 5,15</div>
+        <p class="stat-desc">Estimativa conservadora com insumos de qualidade</p>
+      </div>
+      <div class="stat-card yellow-accent">
+        <div class="stat-mini-label">Preço de venda</div>
+        <div class="stat-big">R$ 15–20</div>
+        <p class="stat-desc">Ticket mínimo de R$15, ideal R$18–20 no posicionamento premium</p>
+      </div>
+      <div class="stat-card green-accent">
+        <div class="stat-mini-label">Margem bruta</div>
+        <div class="stat-big">66–74%</div>
+        <p class="stat-desc">Por unidade vendida ao preço de R$ 15–20</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== INVESTIMENTO MVP ===== -->
+<div class="investimento-section" id="investimento">
+  <div class="investimento-inner">
+    <div class="section-label">Investimento</div>
+    <h2>INVESTIMENTO<br><span>PARA O MVP.</span></h2>
+    <p>Tudo que precisamos para sair do zero e validar o conceito com o primeiro ponto de venda real.</p>
+
+    <div class="mvp-layout">
+      <div class="mvp-list">
+        <div class="mvp-item">
+          <div class="mvp-icon">🛒</div>
+          <div class="mvp-item-text">
+            <div class="mvp-cat">Equipamento</div>
+            <p class="mvp-desc">Carrinho WPPL (Warm) — barraquinha do primo vira Frank's</p>
+          </div>
+          <div class="mvp-val">R$ 5.300</div>
+        </div>
+        <div class="mvp-divider"></div>
+        <div class="mvp-item">
+          <div class="mvp-icon">🔥</div>
+          <div class="mvp-item-text">
+            <div class="mvp-cat">Grill</div>
+            <p class="mvp-desc">Roller Grill elétrico rotativo (cotação Pucci Cozinhas)</p>
+          </div>
+          <div class="mvp-val">R$ 1.800</div>
+        </div>
+        <div class="mvp-divider"></div>
+        <div class="mvp-item">
+          <div class="mvp-icon">🌭</div>
+          <div class="mvp-item-text">
+            <div class="mvp-cat">Estoque Inicial</div>
+            <p class="mvp-desc">Salsicha A Table (5kg) + brioches + molhos — ~150 dogs</p>
+          </div>
+          <div class="mvp-val">R$ 420</div>
+        </div>
+        <div class="mvp-divider"></div>
+        <div class="mvp-item">
+          <div class="mvp-icon">🎨</div>
+          <div class="mvp-item-text">
+            <div class="mvp-cat">Branding / Identidade</div>
+            <p class="mvp-desc">Adesivagem do carrinho, embalagens personalizadas, banner</p>
+          </div>
+          <div class="mvp-val">R$ 800</div>
+        </div>
+        <div class="mvp-divider"></div>
+        <div class="mvp-item">
+          <div class="mvp-icon">📋</div>
+          <div class="mvp-item-text">
+            <div class="mvp-cat">Regularização</div>
+            <p class="mvp-desc">Alvará sanitário básico, MEI / Simples Nacional</p>
+          </div>
+          <div class="mvp-val">R$ 300</div>
+        </div>
+        <div class="mvp-divider"></div>
+        <div class="mvp-item">
+          <div class="mvp-icon">⚙️</div>
+          <div class="mvp-item-text">
+            <div class="mvp-cat">Reserva Operacional</div>
+            <p class="mvp-desc">Capital de giro para 30 dias (reposição de estoque)</p>
+          </div>
+          <div class="mvp-val">R$ 600</div>
+        </div>
+      </div>
+
+      <div class="mvp-sidebar">
+        <div class="mvp-total-card">
+          <div class="tc-label">Total MVP</div>
+          <div class="tc-val">~R$ 9.220</div>
+          <p class="tc-sub">investimento inicial</p>
+        </div>
+        <div class="mvp-kpi-card green-top">
+          <div class="kpi-label">Break-Even</div>
+          <div class="kpi-val">~90 dogs</div>
+          <p class="kpi-sub">ao preço de R$ 17 (ticket médio)</p>
+        </div>
+        <div class="mvp-kpi-card yellow-top">
+          <div class="kpi-label">Payback estimado</div>
+          <div class="kpi-val">2–3 meses</div>
+          <p class="kpi-sub">com volume crescente a partir do mês 1</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== PROJEÇÃO FINANCEIRA ===== -->
+<div class="projecao-section" id="projecao">
+  <div class="projecao-inner">
+    <div class="section-label">Projeção Financeira</div>
+    <h2>QUANTO PODE<br><span>GERAR.</span></h2>
+    <p>Projeção conservadora com 1 ponto de venda inicial, crescimento orgânico e expansão planejada para 5 pontos em 12 meses.</p>
+
+    <div class="chart-wrap">
+      <div class="chart-area">
+        <div class="chart-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--red)"></div>Receita Bruta</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--green)"></div>Lucro Líquido</div>
+        </div>
+
+        <!-- Chart — preço médio R$17, margem líquida ~40%. max receita = 23800, chart height 184px. scale: 184/23800 = 0.00773 -->
+        <div class="chart-bars">
+          <div class="bar-group">
+            <div class="bar-pair">
+              <div class="bar receita" style="height:9px"><span class="bar-val">R$2.040</span></div>
+              <div class="bar lucro"   style="height:4px"><span class="bar-val">R$816</span></div>
+            </div>
+            <div class="bar-label">Mês 1</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-pair">
+              <div class="bar receita" style="height:17px"><span class="bar-val">R$3.570</span></div>
+              <div class="bar lucro"   style="height:7px"><span class="bar-val">R$1.428</span></div>
+            </div>
+            <div class="bar-label">Mês 2</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-pair">
+              <div class="bar receita" style="height:39px"><span class="bar-val">R$5.100</span></div>
+              <div class="bar lucro"   style="height:16px"><span class="bar-val">R$2.040</span></div>
+            </div>
+            <div class="bar-label">Mês 3</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-pair">
+              <div class="bar receita" style="height:79px"><span class="bar-val">R$10.200</span></div>
+              <div class="bar lucro"   style="height:32px"><span class="bar-val">R$4.080</span></div>
+            </div>
+            <div class="bar-label">Mês 6</div>
+          </div>
+          <div class="bar-group">
+            <div class="bar-pair">
+              <div class="bar receita" style="height:184px"><span class="bar-val">R$23.800</span></div>
+              <div class="bar lucro"   style="height:74px"><span class="bar-val">R$9.520</span></div>
+            </div>
+            <div class="bar-label">Mês 12</div>
+          </div>
+        </div>
+
+        <p class="projecao-note">* Projeção estimada com base em ticket médio de R$17 (entre R$15–20). Margem líquida ~40%. Resultado real varia conforme localização do ponto, volume de vendas e operação.</p>
+      </div>
+
+      <div class="assumptions">
+        <h4>Premissas do Modelo</h4>
+        <div class="assumption-row">
+          <span class="a-key">📍 Pontos de venda</span>
+          <span class="a-val">1 (MVP)</span>
+        </div>
+        <div class="assumption-row">
+          <span class="a-key">🌭 Preço de venda</span>
+          <span class="a-val">R$ 15–20</span>
+        </div>
+        <div class="assumption-row">
+          <span class="a-key">📦 Volume — Mês 1</span>
+          <span class="a-val">120 dogs</span>
+        </div>
+        <div class="assumption-row">
+          <span class="a-key">📈 Crescimento</span>
+          <span class="a-val">+30% / mês</span>
+        </div>
+        <div class="assumption-row">
+          <span class="a-key">💰 Margem líquida</span>
+          <span class="a-val">35–42%</span>
+        </div>
+        <div class="assumption-row">
+          <span class="a-key">🏪 Expansão M6</span>
+          <span class="a-val">2 pontos</span>
+        </div>
+        <div class="assumption-row">
+          <span class="a-key">🏪 Expansão M12</span>
+          <span class="a-val">5 pontos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== ROADMAP ===== -->
+<div class="roadmap-bg" id="roadmap">
+  <section>
+    <div class="section-label">Plano de Execução</div>
+    <h2>3 PASSOS<br><span>PARA DECOLAR.</span></h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Validar o Produto</h4>
+        <p>Testar a salsicha A Table + brioche na barraquinha do primo. Coletar feedback real de preço, sabor e ticket médio.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Primeiro Posto</h4>
+        <p>Com produto validado, abordar 3 postos independentes da região com proposta comercial clara e equipamento pronto.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Escalar Logística</h4>
+        <p>Definir rota de abastecimento semanal, fechar com fornecedor em escala e replicar o modelo para novos pontos.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="usa-stripe"></div>
+<div class="footer">
+  <div class="footer-logo">FRANK'S ORIGINAL</div>
+  <p>Hot Dog Co. — Est. 2025 — The American Hot Dog Experience</p>
+</div>
+
+<script>
+  // Active nav dot on scroll
+  const sections = ['conceito','oportunidade','produto','equipamento','custo','investimento','projecao','roadmap'];
+  const dots = document.querySelectorAll('.nav-dot');
+
+  function updateDots() {
+    let current = -1;
+    sections.forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.4) {
+        current = i + 1;
+      }
+    });
+    dots.forEach((d, i) => d.classList.toggle('active', i === (current === -1 ? 0 : current)));
+  }
+
+  window.addEventListener('scroll', updateDots, { passive: true });
+</script>
+
+</body>
+</html>
